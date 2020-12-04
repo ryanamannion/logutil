@@ -7,3 +7,7 @@ This script creates a new log file (by default in ~/logs, but that can be easily
 Dead simple, easy to change
 
 make it executable and alias it to run easier and from any dir
+
+* `$ chmod +x newlog.sh`
+
+* `$ echo 'alias newlog=". /path/to/newlog.sh'`
