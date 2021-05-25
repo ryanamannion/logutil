@@ -17,6 +17,18 @@ EDITOR=micro
 
 PWDOLD=$PWD
 
+FLAG="$1"
+if [ "$FLAG" == '-s' ]; then
+	cd ~/logs
+	grep -r --color="always" "$2"
+	cd $PWDOLD
+	exit 1
+elif [ "$FLAG" == '-o' ]; then
+	cd ~/logs
+	eval $EDITOR $2
+	cd $PWDOLD
+fi
+
 cd
 if [ ! -d "./logs" ]; then
 	mkdir "logs"
