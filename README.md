@@ -6,9 +6,9 @@ I like using logs to keep track of what I did on a certain day
 
 This script creates a log file (just a text file) named with the date in the scheme `YYYY-MM-DD.txt`
 
-By default it creates it in ~/logs, if the dir does not exist it will create it
+By default it creates it in `~/logs`, if the dir does not exist it will create it
 
-The editor is easily configurable in the file. By default it is set to micro, that is what I use
+The editor is easily configurable in the file. By default it is set to `micro`, that is what I use
 
 ## Usage:
 
@@ -26,4 +26,4 @@ The editor is easily configurable in the file. By default it is set to micro, th
 
 1. download
 2. make executable with `chmod +x path/to/logutil.sh` 
-3. move to /usr/local/bin
+3. move to `/usr/local/bin`
