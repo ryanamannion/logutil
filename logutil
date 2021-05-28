@@ -17,23 +17,25 @@ EDITOR=micro
 
 PWDOLD=$PWD
 
-FLAG="$1"
-if [ "$FLAG" == '-s' ]; then
-	cd ~/logs
-	grep -r --color="always" "$2"
-	cd $PWDOLD
-	exit 1
-elif [ "$FLAG" == '-o' ]; then
-	cd ~/logs
-	eval $EDITOR $2
-	cd $PWDOLD
-fi
-
 cd
 if [ ! -d "./logs" ]; then
 	mkdir "logs"
 fi
 cd logs
+
+FLAG="$1"
+if [ "$FLAG" == '-s' ]; then
+	grep -r --color="always" "$2"
+	cd $PWDOLD
+	exit 1
+elif [ "$FLAG" == '-o' ]; then
+	eval $EDITOR $2
+	cd $PWDOLD
+elif [ "$FLAG" == '-l' ]; then
+	ls -lah .
+	cd $PWDOLD
+	exit 1
+fi
 
 # name log based on curent date
 LOGNAME=$(date +"%Y-%m-%d.txt")
