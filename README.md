@@ -22,7 +22,7 @@ The editor is easily configurable in the file. By default it is set to `micro`, 
 
 **-o** &nbsp;  &nbsp;  &nbsp;  open a log, e.g. after using -s to search; give it full log name with extension (does not need to be full path)
 
-**-o** &nbsp;  &nbsp;  &nbsp;  lists all logs in `~/logs`; makes it easy to see created logs and grep for them
+**-l** &nbsp;  &nbsp;  &nbsp;  lists all logs in `~/logs`; makes it easy to see created logs and grep for them
     
 ## Setup
 
