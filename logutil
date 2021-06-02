@@ -29,10 +29,15 @@ if [ "$FLAG" == '-s' ]; then
 	cd $PWDOLD
 	exit 1
 elif [ "$FLAG" == '-o' ]; then
-	eval $EDITOR $2
+	eval $EDITOR "$2.txt"
 	cd $PWDOLD
+	exit 1
 elif [ "$FLAG" == '-l' ]; then
-	ls -lah .
+	ls -lh .
+	cd $PWDOLD
+	exit 1
+elif [ "$FLAG" == '-c' ]; then
+	touch "$2.txt"
 	cd $PWDOLD
 	exit 1
 fi
