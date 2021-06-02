@@ -34,5 +34,6 @@ The editor is easily configurable in the file. By default it is set to `micro`, 
 ## Setup
 
 1. download
-2. make executable with `chmod +x path/to/logutil` 
-3. move to `/usr/local/bin`
+2. move script to `/usr/local/bin`
+3. make executable with `chmod +x /usr/local/bin/logutil` 
+
