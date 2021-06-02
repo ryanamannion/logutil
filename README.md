@@ -12,7 +12,7 @@ The editor is easily configurable in the file. By default it is set to `micro`, 
 
 This is a file I am using to practice writing bash scripts, it is not meant to be super polished and I commit directly to master when I think of new features. Get in touch if you think of anything that might be useful!
 
-## Usage:
+## Usage
 
 ### Basic Usage
 
