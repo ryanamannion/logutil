@@ -14,7 +14,7 @@ The editor is easily configurable in the file. By default it is set to `micro`, 
 
 ### Basic Usage
 
-`logutil` &nbsp;  &nbsp;  &nbsp;  Creates a new log file with the date and open it
+`logutil` &nbsp;  &nbsp;  &nbsp;  Creates a new log file with the date and opens it
 
 ### Synopsis
 
