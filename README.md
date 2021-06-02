@@ -14,15 +14,18 @@ The editor is easily configurable in the file. By default it is set to `micro`, 
 
 ### Synopsis
 
-`logutil [ -s ] [ -o ]`
+`logutil [ -s ] [ -o ] [ -l ] [ -c ]`
 
 ### Options
 
 **-s** &nbsp;  &nbsp;  &nbsp;  search string; search for string in ~/logs/ from anywhere, uses grep and returns colored grep output
 
-**-o** &nbsp;  &nbsp;  &nbsp;  open a log, e.g. after using -s to search; give it full log name with extension (does not need to be full path)
+**-o** &nbsp;  &nbsp;  &nbsp;  open a log, e.g. after using -s to search; give it just the date e.g. `logutil -o 2021-06-02`
 
 **-l** &nbsp;  &nbsp;  &nbsp;  lists all logs in `~/logs`; makes it easy to see created logs and grep for them
+
+
+**-c** &nbsp;  &nbsp;  &nbsp;  create; creates log for the provided date (e.g. `logutil -c 2021-12-25`)
     
 ## Setup
 
