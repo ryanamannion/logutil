@@ -2,13 +2,15 @@
 
 ## Description
 
-I like using logs to keep track of what I did on a certain day
+Personal logs help me remember what I do day to day, and can help with summarizing the state of my work at recurring meetings. This makes the creation and editing of personal logs easier.
 
 This script creates a log file (just a text file) named with the date in the scheme `YYYY-MM-DD.txt`
 
 By default it creates it in `~/logs`, if the dir does not exist it will create it
 
 The editor is easily configurable in the file. By default it is set to `micro`, that is what I use
+
+This is a file I am using to practice writing bash scripts, it is not meant to be super polished and I commit directly to master when I think of new features. Get in touch if you think of anything that might be useful!
 
 ## Usage:
 
