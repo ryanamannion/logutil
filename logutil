@@ -40,7 +40,14 @@ elif [ "$FLAG" == '-c' ]; then
 	touch "$2.txt"
 	cd $PWDOLD
 	exit 1
+elif [ "$FLAG" == '-y' ]; then
+	TODAY=$(date +"%d")
+	let YEST=$TODAY-1
+	printf -v YESTPADDED "%02g" $YEST
+	eval $EDITOR $(date +"%Y-%m-$YESTPADDED.txt")
+	exit 1
 fi
+
 
 # name log based on curent date
 LOGNAME=$(date +"%Y-%m-%d.txt")
