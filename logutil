@@ -25,38 +25,33 @@ cd logs
 
 FLAG="$1"
 if [ "$FLAG" == '-s' ]; then
+	# search
 	grep -r --color="always" "$2"
-	cd $PWDOLD
-	exit 1
 elif [ "$FLAG" == '-o' ]; then
+	# open
 	eval $EDITOR "$2.txt"
-	cd $PWDOLD
-	exit 1
 elif [ "$FLAG" == '-l' ]; then
+	# list
 	ls -lh .
-	cd $PWDOLD
-	exit 1
 elif [ "$FLAG" == '-c' ]; then
+	# create
 	touch "$2.txt"
-	cd $PWDOLD
-	exit 1
 elif [ "$FLAG" == '-y' ]; then
+	# open yesterday
 	YEST=$(date -d "yesterday" +"%Y-%m-%d.txt")
 	eval $EDITOR $YEST
-	exit 1
+else
+	# main routine, no flags
+	# name log based on curent date
+	LOGNAME=$(date +"%Y-%m-%d.txt")
+	# creates new log if one does not already exist for that day
+	if [ ! -f "./${LOGNAME}" ]; then
+		echo "$LOGNAME" | xargs touch
+	fi
+	# open log with config'd editor
+	eval $EDITOR $LOGNAME
 fi
-
-
-# name log based on curent date
-LOGNAME=$(date +"%Y-%m-%d.txt")
-
-# creates new log if one does not already exist for that day
-if [ ! -f "./${LOGNAME}" ]; then
-	echo "$LOGNAME" | xargs touch
-fi
-
-# open log with config'd editor
-eval $EDITOR $LOGNAME
 
 # change back to old dir for ~continuity~
 cd $PWDOLD
+exit 1
