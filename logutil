@@ -41,10 +41,8 @@ elif [ "$FLAG" == '-c' ]; then
 	cd $PWDOLD
 	exit 1
 elif [ "$FLAG" == '-y' ]; then
-	TODAY=$(date +"%d")
-	let YEST=$TODAY-1
-	printf -v YESTPADDED "%02g" $YEST
-	eval $EDITOR $(date +"%Y-%m-$YESTPADDED.txt")
+	YEST=$(date -d "yesterday" +"%Y-%m-%d.txt")
+	eval $EDITOR $YEST
 	exit 1
 fi
 
