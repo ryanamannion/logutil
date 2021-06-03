@@ -20,7 +20,7 @@ This is a file I am using to practice writing bash scripts, it is not meant to b
 
 ### Synopsis
 
-`logutil [ -s ] [ -o ] [ -l ] [ -c ]`
+`logutil [ -s ] [ -o ] [ -l ] [ -c ] [ -y ]`
 
 ### Options
 
@@ -32,6 +32,9 @@ This is a file I am using to practice writing bash scripts, it is not meant to b
 
 
 **-c** &nbsp;  &nbsp;  &nbsp;  create; creates log for the provided date (e.g. `logutil -c 2021-12-25`)
+
+**-y** &nbsp;  &nbsp;  &nbsp;  create; opens log for yesterday's date. Does not open the last log chronologically
+
     
 ## Setup
 
