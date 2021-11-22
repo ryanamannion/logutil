@@ -17,6 +17,15 @@ EDITOR=micro
 
 PWDOLD=$PWD
 
+create_log() {
+	name=$1
+	echo "$name" | xargs touch
+	echo $(date +"%A %b %d %Y") >> $name
+	s=$(printf "%-80s" "=")
+	echo "${s// /=}" >> $name
+	echo "" >> $name
+}
+
 cd
 if [ ! -d "./logs" ]; then
 	mkdir "logs"
@@ -31,11 +40,19 @@ elif [ "$FLAG" == '-o' ]; then
 	# open
 	eval $EDITOR "$2.txt"
 elif [ "$FLAG" == '-l' ]; then
-	# list
-	ls -lh .
+	# list logs
+	if [ "$2" == '-a' ]; then
+		# list all logs
+		ls -t
+	elif [ "$2" == '-n' ]; then
+		ls -t | head -n "$3"
+	else
+		# list most recent 5 docs
+		ls -t | head -n 5
+	fi
 elif [ "$FLAG" == '-c' ]; then
 	# create
-	touch "$2.txt"
+	create_log "$2.txt"
 elif [ "$FLAG" == '-y' ]; then
 	# open yesterday
 	YEST=$(date -d "yesterday" +"%Y-%m-%d.txt")
@@ -46,7 +63,7 @@ else
 	LOGNAME=$(date +"%Y-%m-%d.txt")
 	# creates new log if one does not already exist for that day
 	if [ ! -f "./${LOGNAME}" ]; then
-		echo "$LOGNAME" | xargs touch
+		create_log $LOGNAME
 	fi
 	# open log with config'd editor
 	eval $EDITOR $LOGNAME
